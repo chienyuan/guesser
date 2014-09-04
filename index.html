@@ -1,38 +1,58 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-  <meta charset="UTF-8">
-  <title>Number Guesser</title>
-  <link rel = "stylesheet"
-        type = "text/css"
-        href = "style/numGuess.css" />
-  <script type = "text/javascript"
-          src = "js/numGuess.js"></script>
-</head>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>   <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>   <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Guess Number Game</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<body onload = "init()">
-  <h1>Number Guesser</h1>
-  <form>
-    <fieldset>
-      <div id = "output">
-        I'm thinking of a number between 0 and 100.
-        Guess my number, and I'll tell if you are
-        too high, too low, or correct.
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  </head>
+  <body onload="init()">
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <div id="game-wrap">
+    <h1 id="title"><center>Guesser</center></h1>
+    <div id="panel">
+      <div class="center">
+      <input type="text" id="txtGuess" placeholder="Enter Your Guess">
+      <button id="checkButton">Check</button>
+      <button id="newButton">New Game</button>
       </div>
-      <label for = "">Your Guess</label>
-      <input type = "text"
-             id = "txtGuess">
-      <button type = "button"
-              onclick = "checkGuess()">
-        check your guess
-      </button>
-      
-      <button type = "button"
-              id = "again"
-              onclick = "init()">
-        try again
-      </button>
-    </fieldset>
-  </form>
-</body>
+    </div>
+    <h3 id="instruction"></h3>
+    <h3 id="board"></h3>
+    <h3 id="desc">
+    I'm thinking of 4 different number. Guess my number, and I'll tell you: A for correct position or B for incorrect position. After you got 4 A then the game end.
+    </h3>
+    
+  </div>
+  
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='http://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+  </script>
+  </body>
 </html>
